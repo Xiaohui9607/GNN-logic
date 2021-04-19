@@ -66,7 +66,7 @@ class ACGNN(torch.nn.Module):
 
     def forward(self, x, edge_index, batch):
 
-        h = x
+        h = x + torch.randn_like(x)
         if not self.bigger_input:
             h = self.padding(h)
 
